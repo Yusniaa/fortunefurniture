@@ -27,12 +27,12 @@ class Pengiriman(models.Model):
     def create(self,vals):
         record = super(Pengiriman, self).create(vals) 
         if record.tgl_pengiriman:
-            self.env['wedding.order'].search([('id','=',record.order_id.id)]).write({'sudah_kirim':True}) 
-            self.env['wedding.akunting'].create({'kredit' : record.tagihan, 'name':record.name})          
+            self.env['furniture.order'].search([('id','=',record.order_id.id)]).write({'sudah_kirim':True}) 
+            self.env['furniture.akunting'].create({'kredit' : record.tagihan, 'name':record.name})          
             return record
 
     def unlink(self):
         for x in self:
-            self.env['wedding.order'].search([('id','=',x.order_id.id)]).write({'sudah_kirim':False})
+            self.env['furniture.order'].search([('id','=',x.order_id.id)]).write({'sudah_kirim':False})
         record = super(Pengiriman, self).unlink()
    
