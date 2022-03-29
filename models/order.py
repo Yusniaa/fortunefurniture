@@ -30,9 +30,7 @@ class Order(models.Model):
     pemesan = fields.Many2one(
         comodel_name='res.partner', 
         string='Pemesan', 
-        domain=[('is_customer','=', True)],store=True)
-        
-    
+        domain=[('is_customer','=', True)],store=True)   
     total = fields.Integer(compute='_compute_total', string='Total', store=True)
     
     @api.depends('ordersetmejakursi_ids')
@@ -41,7 +39,7 @@ class Order(models.Model):
             a = sum(self.env['furniture.ordersetmejakursi'].search([('order_id', '=', record.id)]).mapped('harga'))
             b = sum(self.env['furniture.ordermejadetail'].search([('orderm_id', '=', record.id)]).mapped('harga'))
             c = sum(self.env['furniture.orderkursidetail'].search([('orderk_id', '=', record.id)]).mapped('harga'))
-            d = sum(self.env['furniture.orderlemaridetail'].search([('orderk_id', '=', record.id)]).mapped('harga'))
+            d = sum(self.env['furniture.orderlemaridetail'].search([('orderl_id', '=', record.id)]).mapped('harga'))
             record.total = a + b + c + d
 
     sudah_kirim= fields.Boolean(string='Sudah Dikirimkan', default=False)

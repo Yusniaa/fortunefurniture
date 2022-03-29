@@ -9,6 +9,7 @@
                 <field name="meja_id"/>
                 <field name="kursi_id"/>
                 <field name="stok"/>
+                <field name="diskon"/>
                 <field name="harga"/>
             </tree>
         </field>
@@ -25,6 +26,7 @@
                         <field name="meja_id"/>
                         <field name="kursi_id"/>
                         <field name="stok"/>
+                        <field name="diskon"/>
                         <field name="harga"/>
                     </group>
                 </sheet>
