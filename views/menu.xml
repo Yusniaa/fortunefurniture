@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <menuitem
+        id="furniture_menu_root"
+        name="Fortune Furniture"
+        sequence="10"/>
+
+    <menuitem
+        id="furniture_produk_menu_categ"
+        name="Produk"
+        parent="furniture_menu_root"
+        sequence="10"/>
+
+    <menuitem
+        id="furniture_order_menu_categ"
+        name="Order"
+        parent="furniture_menu_root"
+        sequence="20"/>
+
+    <menuitem
+        id="furniture_partner_menu_categ"
+        name="Partner"
+        parent="furniture_menu_root"
+        sequence="30"/>
+</odoo>

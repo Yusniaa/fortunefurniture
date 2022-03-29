@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_partner_view_id" model="ir.ui.view">
+        <field name="name">res.partner.inherit.view.form</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <field name="vat" position="after">
+                <field name="is_pegawai"/>
+                <field name="is_customer"/>
+            </field>            
+        </field>
+    </record>
+
+    <record id="res_partner_inherit_search" model="ir.ui.view">
+        <field name="name">res.partner.inherit.view.search</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_res_partner_filter"/>
+        <field name="arch" type="xml">
+            <field name="parent_id" position="after">
+                <filter name="customer" string="Customer" domain="[('is_customer', '=', True)]"/>
+                <filter name="pegawai" string="Pegawai" domain="[('is_pegawai', '=', True)]"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="res_partner_pegawai_action" model="ir.actions.act_window">
+        <field name="name">Pegawai</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">res.partner</field>
+        <field name="context">{
+            'search_default_pegawai':1,
+            'default_is_pegawai':True,
+        }</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem
+        id="furniture_partner_pegawai_menu_act"
+        name="Pegawai"
+        action="res_partner_pegawai_action"
+        parent="furniture_partner_menu_categ"
+        sequence="10"/>
+</odoo>

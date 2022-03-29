@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="furniture_kursi_view_tree" model="ir.ui.view">
+        <field name="name">furniture_kursi.view.tree</field>
+        <field name="model">furniture.kursi</field>
+        <field name="arch" type="xml">
+            <tree string="">
+                <field name="name"/>
+                <field name="stok"/>
+                <field name="harga"/>
+                <field name="deskripsi"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="furniture_kursi_view_form" model="ir.ui.view">
+        <field name="name">furniture_kursi.view.form</field>
+        <field name="model">furniture.kursi</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="stok"/>
+                        <field name="harga"/>
+                    </group>
+                    <group>
+                        <field name="deskripsi"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="furniture_kursi_action" model="ir.actions.act_window">
+        <field name="name">Kursi</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">furniture.kursi</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem
+        id="furniture_kursi_menu_act"
+        name="Kursi"
+        action="furniture_kursi_action"
+        parent="furniture_produk_menu_categ"
+        sequence="20"/>
+</odoo>

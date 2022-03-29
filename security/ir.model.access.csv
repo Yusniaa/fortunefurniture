@@ -1,0 +1,12 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+access_furniture_kursi,access.furniture.kursi,model_furniture_kursi,,1,1,1,1
+access_furniture_lemari,access.furniture.lemari,model_furniture_lemari,,1,1,1,1
+access_furniture_meja,access.furniture.meja,model_furniture_meja,,1,1,1,1
+access_furniture_setmejakursi,access.furniture.setmejakursi,model_furniture_setmejakursi,,1,1,1,1
+access_furniture_order,access.furniture.order,model_furniture_order,,1,1,1,1
+access_furniture_ordersetmejakursi,access.furniture.ordersetmejakursi,model_furniture_ordersetmejakursi,,1,1,1,1
+access_furniture_ordermejadetail,access.furniture.ordermejadetail,model_furniture_ordermejadetail,,1,1,1,1
+access_furniture_orderkursidetail,access.furniture.orderkursidetail,model_furniture_orderkursidetail,,1,1,1,1
+access_furniture_orderlemaridetail,access.furniture.orderlemaridetail,model_furniture_orderlemaridetail,,1,1,1,1
+access_furniture_akunting,access.furniture.akunting,model_furniture_akunting,,1,1,1,1

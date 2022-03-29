@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="furniture_order_view_tree" model="ir.ui.view">
+        <field name="name">Order Furniture</field>
+        <field name="model">furniture.order</field>
+        <field name="arch" type="xml">
+            <tree string="">
+                <field name="name"/>
+                <field name="pemesan"/>
+                <field name="tanggal_pesan"/>
+                <field name="tanggal_pengiriman"/>
+                <field name="total"/>
+                <field name="ordersetmejakursi_ids"/>
+                <field name="ordermejadetail_ids"/>
+                <field name="orderkursidetail_ids"/>
+                <field name="orderlemaridetail_ids"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="furniture_order_view_form" model="ir.ui.view">
+        <field name="name">Order Furniture</field>
+        <field name="model">furniture.order</field>
+        <field name="arch" type="xml">
+            <form string="Order Detail">
+                <sheet>
+                    <group>                     
+                        <field name="name"/>
+                        <field name="pemesan"/>
+                        <field name="tanggal_pesan"/>
+                        <field name="tanggal_pengiriman"/>
+                        <field name="total"/>
+                        <field name="ordersetmejakursi_ids">
+                            <tree editable='bottom'>
+                                <field name="setmejakursi_id"/>
+                                <field name="harga_satuan"/>
+                                <field name="qty"/>
+                                <field name="harga" sum="Total"/>
+                            </tree>
+                        </field>
+                        <field name="ordermejadetail_ids">
+                            <tree editable='bottom'>
+                                <field name="meja_id"/>
+                                <field name="harga_satuan"/>
+                                <field name="qty"/>
+                                <field name="harga" sum="Total"/>
+                            </tree>
+                        </field>
+                        <field name="orderkursidetail_ids">
+                            <tree editable='bottom'>
+                                <field name="kursi_id"/>
+                                <field name="harga_satuan"/>
+                                <field name="qty"/>
+                                <field name="harga" sum="Total"/>
+                            </tree>
+                        </field>
+                        <field name="orderlemaridetail_ids">
+                            <tree editable='bottom'>
+                                <field name="lemari_id"/>
+                                <field name="harga_satuan"/>
+                                <field name="qty"/>
+                                <field name="harga" sum="Total"/>
+                            </tree>
+                        </field>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="furniture_order_action" model="ir.actions.act_window">
+        <field name="name">Order Furniture</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">furniture.order</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem
+        id="furniture_order_menu_act"
+        name="Order Furniture"
+        action="furniture_order_action"
+        parent="furniture_order_menu_categ"
+        sequence="10"/>
+</odoo>
