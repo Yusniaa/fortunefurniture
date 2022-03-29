@@ -27,7 +27,6 @@ class Order(models.Model):
     
     name = fields.Char(string='Kode Order', required=True)
     tanggal_pesan = fields.Datetime('Tanggal Pemesanan',default=fields.Datetime.now())
-    tanggal_pengiriman = fields.Date(string='Tanggal Pengiriman', default=fields.Date.today())
     pemesan = fields.Many2one(
         comodel_name='res.partner', 
         string='Pemesan', 
@@ -44,6 +43,8 @@ class Order(models.Model):
             c = sum(self.env['furniture.orderkursidetail'].search([('orderk_id', '=', record.id)]).mapped('harga'))
             d = sum(self.env['furniture.orderlemaridetail'].search([('orderk_id', '=', record.id)]).mapped('harga'))
             record.total = a + b + c + d
+
+    sudah_kirim= fields.Boolean(string='Sudah Dikirimkan', default=False)
 
 class OrderSetMejaKursi(models.Model):
     _name = 'furniture.ordersetmejakursi'

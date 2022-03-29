@@ -8,3 +8,4 @@ from . import order
 from . import res_partner
 from . import set_mejakursi
 from . import akunting
+from . import pengiriman

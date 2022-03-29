@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- furniture.pengiriman tree view -->
+    <record id="furniture_pengiriman_view_tree" model="ir.ui.view">
+        <field name="name">Daftar Pengiriman Barang</field>
+        <field name="model">furniture.pengiriman</field>
+        <field name="arch" type="xml">
+            <tree>
+                <!-- Add your fields here -->
+                <field name="order_id"/>
+                <field name="name"/>             
+                <field name="tagihan"/> 
+                <field name="tgl_pengiriman"/>      
+            </tree>
+        </field>
+    </record>
+
+    <!-- furniture.pengiriman form view -->
+    <record id="furniture_pengiriman_view_form" model="ir.ui.view">
+        <field name="name">Pengiriman Barang</field>
+        <field name="model">furniture.pengiriman</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <!-- Add your fields here -->
+                        <field name="order_id"/>
+                        <field name="name"/>
+                    </group>
+                     <group>                        
+                        <field name="tgl_pengiriman"/>
+                    </group>
+                    <group>
+                        <!-- Add your fields here -->
+                        <field name="tagihan"/>
+                        
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- furniture.pengiriman action window -->
+    <record id="furniture_pengiriman_action" model="ir.actions.act_window">
+        <field name="name">Pengiriman Barang</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">furniture.pengiriman</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem 
+        id="furniture_pengiriman_menu_act" 
+        name="Pengiriman Barang" 
+        parent="furniture_order_menu_categ" 
+        action="furniture_pengiriman_action" 
+        sequence="20"/>
+
+</odoo>

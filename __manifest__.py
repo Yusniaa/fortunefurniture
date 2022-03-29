@@ -37,6 +37,7 @@
         'views/customer_views.xml',
         'views/setmejakursi_views.xml',
         'views/akunting_views.xml',
+        'views/pengiriman_views.xml',
         'report/report.xml',
         'report/report_order.xml',
     ],

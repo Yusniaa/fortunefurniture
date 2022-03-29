@@ -10,3 +10,4 @@ access_furniture_ordermejadetail,access.furniture.ordermejadetail,model_furnitur
 access_furniture_orderkursidetail,access.furniture.orderkursidetail,model_furniture_orderkursidetail,,1,1,1,1
 access_furniture_orderlemaridetail,access.furniture.orderlemaridetail,model_furniture_orderlemaridetail,,1,1,1,1
 access_furniture_akunting,access.furniture.akunting,model_furniture_akunting,,1,1,1,1
+access_furniture_pengiriman,access.furniture.pengiriman,model_furniture_pengiriman,,1,1,1,1
