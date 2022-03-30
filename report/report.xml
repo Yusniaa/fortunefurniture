@@ -2,7 +2,7 @@
 <odoo>
     <record id="report_furniture_order" model="ir.actions.report">
         <field name="name">Report Order</field>
-        <field name="model">model.name</field>
+        <field name="model">furniture.order</field>
         <field name="report_type">qweb-pdf</field>
         <field name="report_name">fortunefurniture.report_furniture_order</field>
         <field name="report_file">fortunefurniture.report_furniture_order</field>

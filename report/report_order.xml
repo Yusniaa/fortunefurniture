@@ -20,16 +20,32 @@
                             <div class="row">
                                 <table class="table-bordered">
                                         <tr>
-                                            <th>Jenis Meja</th>
+                                            <th>Nama Produk</th>
                                             <th>Quantity</th>
                                         </tr>
-                                <t t-foreach="o.ordermejadetail_ids" t-as="k">
-                                    
+                                <t t-foreach="o.ordersetmejakursi_ids" t-as="k">
+                                        <tr>
+                                            <td><span t-esc="k.setmejakursi_id.name"/></td>
+                                            <td><span t-esc="k.qty"/></td>
+                                        </tr>
+                                </t>
+                                <t t-foreach="o.ordermejadetail_ids" t-as="k">                
                                         <tr>
                                             <td><span t-esc="k.meja_id.name"/></td>
                                             <td><span t-esc="k.qty"/></td>
-                                        </tr>                          
-                                    
+                                        </tr>                                                     
+                                </t>
+                                <t t-foreach="o.orderkursidetail_ids" t-as="k">
+                                        <tr>
+                                            <td><span t-esc="k.kursi_id.name"/></td>
+                                            <td><span t-esc="k.qty"/></td>
+                                        </tr>
+                                </t>
+                                <t t-foreach="o.orderlemaridetail_ids" t-as="k">
+                                        <tr>
+                                            <td><span t-esc="k.lemari_id.name"/></td>
+                                            <td><span t-esc="k.qty"/></td>
+                                        </tr>
                                 </t>
                                 </table>
                             </div>

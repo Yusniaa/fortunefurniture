@@ -22,7 +22,6 @@ class Pengiriman(models.Model):
         for record in self:
             record.tagihan = record.order_id.total            
    
-        
     @api.model
     def create(self,vals):
         record = super(Pengiriman, self).create(vals) 
