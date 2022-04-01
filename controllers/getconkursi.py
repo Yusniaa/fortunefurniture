@@ -39,3 +39,4 @@ class KursiCon(http.Controller):
                 kursibaru = request.env['furniture.kursi'].create(vals)
                 args = {'success': True, 'ID':kursibaru.id}
                 return args
+

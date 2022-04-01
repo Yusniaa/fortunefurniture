@@ -44,6 +44,22 @@ class Order(models.Model):
 
     sudah_kirim= fields.Boolean(string='Sudah Dikirimkan', default=False)
 
+    def invoice(self):
+        invoices = self.env['account.move'].create({
+            'move_type' : 'out_invoice',
+            'partner_id' : self.pemesan,
+            'invoice_date' : self.tanggal_pesan,
+            'date' : fields.Datetime.now(),
+            'invoice_line_ids' :[(0,0,{
+                'product_id' : 0,
+                'quantity' : 1,
+                'price_unit' : self.total,
+                'price_subtotal' : self.total,
+            })]
+        })
+        self.sudah_kirim = True
+        return invoices
+
 class OrderSetMejaKursi(models.Model):
     _name = 'furniture.ordersetmejakursi'
     _description = 'Order Set Meja dan Kursi'
@@ -55,7 +71,6 @@ class OrderSetMejaKursi(models.Model):
     harga = fields.Integer(compute = '_compute_harga',string='Harga')
     qty = fields.Integer(string='Quantity')
     harga_satuan = fields.Integer(compute = '_compute_harga_satuan',string='Harga Satuan')
-    
     
     @api.depends('setmejakursi_id')
     def _compute_harga_satuan(self):

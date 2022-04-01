@@ -5,6 +5,9 @@
         <field name="model">furniture.order</field>
         <field name="arch" type="xml">
             <tree string="">
+            <header>
+                <button string="Masuk Akunting Modul" name="invoice" type="object" class="oe_highlight"/>
+            </header>
                 <field name="name"/>
                 <field name="pemesan"/>
                 <field name="tanggal_pesan"/>
